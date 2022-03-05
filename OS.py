@@ -145,6 +145,8 @@ def run_commands():
         error = 'ERR; Command Canot Be Null: exit Code 1'
         err_code = 1
         return 1
+      elif returned == 2:
+        return
       else:
         print('Error')
 

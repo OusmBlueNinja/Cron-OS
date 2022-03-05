@@ -209,7 +209,7 @@ cd
 ## Directory
 
 ```
-CronOS
+Cron-OS
 ├─ .gitignore
 ├─ Drive
 │  ├─ ProgramFiles
@@ -270,4 +270,5 @@ class pkgs:
 put this code in a file names ```pkg.py``` in ```Drive/System/pkg/(pkg.py)``` replace pkg.py
 
 return 11 to logout and return 1 to make it so OS.py doesent throw an error
+
 

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 CronOS
 ================
 
@@ -132,7 +131,6 @@ class pkgs:
 put this code in a file names ```pkg.py``` in ```Drive/System/pkg/(pkg.py)``` replace pkg.py
 
 return 11 to logout and return 1 to make it so OS.py doesent throw an error
-=======
 CronOS
 ================
 
@@ -273,4 +271,3 @@ put this code in a file names ```pkg.py``` in ```Drive/System/pkg/(pkg.py)``` re
 
 return 11 to logout and return 1 to make it so OS.py doesent throw an error
 
->>>>>>> 53fe261 (Major Update)

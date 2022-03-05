@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 {
 
   "guest":{
@@ -8,9 +7,8 @@
   "Admin":{
     "name":"Admin",
     "password":"2iPNHNCe"
-=======
-{
 
+  },
   "guest":{
     "name":"guest",
     "password":"1234"
@@ -18,7 +16,6 @@
   "Admin":{
     "name":"Admin",
     "password":"2iPNHNCe"
->>>>>>> 53fe261 (Major Update)
   },
   "Teacher":{
     "name":"Teacher",
@@ -27,11 +24,8 @@
   "Erik":{
     "name":"Erik",
     "password":"5"
-<<<<<<< HEAD
   }
 
-=======
-  }
+  
 
->>>>>>> 53fe261 (Major Update)
 }

@@ -9,7 +9,7 @@ with open('Drive/System/users.json', 'r') as x:
 pkgM.__init__()
     
 
- 
+_dir = ''
     
 running = True
 
@@ -31,6 +31,7 @@ def login():
   global logged_in
   global username
   global in_cd
+  global _dir
   
   
   clear()

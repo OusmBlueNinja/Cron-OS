@@ -1,5 +1,4 @@
 {
-
   "guest":{
     "name":"guest",
     "password":"1234"
@@ -7,23 +6,6 @@
   "Admin":{
     "name":"Admin",
     "password":"2iPNHNCe"
-
-  },
-  "guest":{
-    "name":"guest",
-    "password":"1234"
-  },
-  "Admin":{
-    "name":"Admin",
-    "password":"2iPNHNCe"
-  },
-  "Teacher":{
-    "name":"Teacher",
-    "password":"1234"
-  },
-  "Erik":{
-    "name":"Erik",
-    "password":"5"
   }
 
   

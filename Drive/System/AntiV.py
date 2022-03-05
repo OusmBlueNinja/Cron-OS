@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import os, os.path, filecmp, time
 
 
@@ -51,7 +50,6 @@ antiV.scan('xUMZJQaogb3vwmiwJqIGPo06Z')
 
 
 
-=======
 import os, os.path, filecmp, time
 
 
@@ -104,4 +102,3 @@ antiV.scan('xUMZJQaogb3vwmiwJqIGPo06Z')
 
 
 
->>>>>>> 53fe261 (Major Update)

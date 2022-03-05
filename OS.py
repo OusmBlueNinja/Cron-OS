@@ -17,21 +17,12 @@ logged_in = False
 
 in_cd = False
 def printLogo():
-<<<<<<< HEAD
-  print(color.style.RED + '''_________   ''')                              
-  print(color.style.RED + '''\_   ___ \_______  ____   ____ '''+color.style.BLUE+'''  ____  ______''')
-  print(color.style.RED + '''/    \  \/\_  __ \/  _ \ /    \ '''+color.style.BLUE+'''/  _ \/  ___/''')
-  print(color.style.RED + '''\     \____|  | \(  <_> )   |  )'''+color.style.BLUE+'''(  <_> )___ \ ''')
-  print(color.style.RED + ''' \______  /|__|   \____/|___|  /'''+color.style.BLUE+'''\____/____  >''')
-  print(color.style.RED + '''        \/                   \/ '''+color.style.BLUE+'''          \/''')
-=======
   print(color.style.RED + ''' _________   ''')                              
   print(color.style.RED + ''' \_   ___ \_______  ____   ____ '''+color.style.BLUE+'''  ____  ______''')
   print(color.style.RED + ''' /    \  \/\_  __ \/  _ \ /    \ '''+color.style.BLUE+'''/  _ \/  ___/''')
   print(color.style.RED + ''' \     \____|  | \(  <_> )   |  )'''+color.style.BLUE+'''(  <_> )___ \ ''')
   print(color.style.RED + '''  \______  /|__|   \____/|___|  /'''+color.style.BLUE+'''\____/____  >''')
   print(color.style.RED + '''         \/                   \/ '''+color.style.BLUE+'''          \/''')
->>>>>>> 53fe261 (Major Update)
   print(color.style.RESET + '\n')
 
 
@@ -50,13 +41,8 @@ def login():
   while not logged_in:
     printLogo()
     
-<<<<<<< HEAD
-    username = input('username >>')
-    password = input('password >>')
-=======
     username = input(' username >>')
     password = input(' password >>')
->>>>>>> 53fe261 (Major Update)
     try:
       if username == y[username]['name']:
         if password == y[username]['password']:
@@ -78,10 +64,7 @@ def clear():
   
 def runcd(cd_cmd):
   try:
-<<<<<<< HEAD
-=======
     global in_cd
->>>>>>> 53fe261 (Major Update)
     print(os.listdir(cd_cmd))
   except:
     if cd_cmd == 'exit':
@@ -157,11 +140,7 @@ def run_commands():
         print('\n Logged out of ' + username + '\n')
         time.sleep(1)
         return
-<<<<<<< HEAD
-      elif returned <= 1:
-=======
       elif returned == 1:
->>>>>>> 53fe261 (Major Update)
         error = 'ERR; Command Canot Be Null: exit Code 1'
         err_code = 1
         return 1
@@ -186,22 +165,14 @@ while running:
   
   
   if in_cd == True:
-<<<<<<< HEAD
-    cd_cmd = input(color.style.BLUE + '~' + color.style.RESET + '$ ')
-=======
     cd_cmd = input(color.style.BLUE + ' ~' + color.style.RESET + '$ ')
->>>>>>> 53fe261 (Major Update)
 
     runcd(cd_cmd)
     if in_cd == False:
       pass
 
   else:   
-<<<<<<< HEAD
-    command = input(color.style.BLUE + '~/'+username + color.style.RESET + '$ ')
-=======
     command = input(color.style.BLUE + ' ~/'+username + color.style.RESET + '$ ')
->>>>>>> 53fe261 (Major Update)
     if run_commands() == 1:
       print(error)
   print(color.style.RESET)

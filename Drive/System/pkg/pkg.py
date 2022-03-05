@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 class pkgs:  
   def run(cmd):
     
@@ -14,7 +13,6 @@ class pkgs:
     
     
     
-=======
 class pkgs:  
   def run(cmd):
     
@@ -30,7 +28,6 @@ class pkgs:
     
     
     
->>>>>>> 53fe261 (Major Update)
     ## insert package here
 
     if command_1 == 'logout':

@@ -1,0 +1,83 @@
+<<<<<<< HEAD
+CronOS
+
+============
+
+Commands:
+  rom - read root files
+  programs - list installed programs
+  clear - clears term
+  exit() - close CronOS
+  whoami - tells you who you are logged in as
+  -run - put a filename thats in Drive/ProgramFiles (ends with .py) example -run joke.py
+
+
+Install packages:
+  go to Drive/System/pkg
+  name your package as pkg
+  put file in pkg
+
+  (any command you run will check if its a pkg command)
+
+Package starter
+__________________________________
+class pkgs:  
+  def run(cmd):
+    
+    try:
+      command_1 = cmd.split()[0]
+      try:
+        command_2 = cmd.split()[1]
+      except:
+        pass
+    except:
+      pass
+    
+    
+    
+    ## insert package here
+
+__________________________________
+
+=======
+CronOS
+
+============
+
+Commands:
+  rom - read root files
+  programs - list installed programs
+  clear - clears term
+  exit() - close CronOS
+  whoami - tells you who you are logged in as
+  -run - put a filename thats in Drive/ProgramFiles (ends with .py) example -run joke.py
+
+
+Install packages:
+  go to Drive/System/pkg
+  name your package as pkg
+  put file in pkg
+
+  (any command you run will check if its a pkg command)
+
+Package starter
+__________________________________
+class pkgs:  
+  def run(cmd):
+    
+    try:
+      command_1 = cmd.split()[0]
+      try:
+        command_2 = cmd.split()[1]
+      except:
+        pass
+    except:
+      pass
+    
+    
+    
+    ## insert package here
+
+__________________________________
+
+>>>>>>> 53fe261 (Major Update)

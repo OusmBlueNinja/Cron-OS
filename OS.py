@@ -28,6 +28,7 @@ def printLogo():
 
 
 def login():
+  global error
   global logged_in
   global username
   global in_cd

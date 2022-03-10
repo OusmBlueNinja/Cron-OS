@@ -1,7 +1,8 @@
-import time, json, os, sys, os.path, filecmp
+import time, json, os, sys, os.path, filecmp, pygame
 from Drive.System.packages import pkgM
 from Drive.System import color
 from Drive.System import load
+##⁡⁢⁣⁢⁡⁢⁢⁢from Drive.System import gui⁡⁡
 
 with open('Drive/System/users.json', 'r') as x:
     y = json.load(x)
@@ -16,6 +17,9 @@ running = True
 logged_in = False
 
 in_cd = False
+
+    
+    
 def printLogo():
   print(color.style.RED + ''' _________   ''')                              
   print(color.style.RED + ''' \_   ___ \_______  ____   ____ '''+color.style.BLUE+'''  ____  ______''')
@@ -51,6 +55,9 @@ def login():
           logged_in = True
           ## \033[92m 
           print('logged in as '+ username)
+          data = open('Drive/System/data/userinfo.info', 'w')
+          data.write(username)
+          data.close()
           return
     except:
       print('Wrong Username Or Password \n')
@@ -133,6 +140,9 @@ def run_commands():
   elif command_1 == 'cd':
     in_cd = True
     
+  elif command_1 == 'test':
+    exec(open('Drive/System/gui.py').read())
+    
     
   else:
       returned = pkgM.run(command_1, command)
@@ -150,7 +160,6 @@ def run_commands():
         return
       else:
         print('Error')
-
 
   
 

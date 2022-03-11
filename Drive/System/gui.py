@@ -1,19 +1,34 @@
 import pygame, sys, time
+import color
 
-
-
+with open('Drive/System/data/userinfo.info', 'r') as y:
+  global x
+  x = y.readlines(0)
 class window:
   def __init__(self):
-    self.userinfo = open('Drive/System/data/userinfo.info', 'r')
-    self.window_name = 'CronOS GUI'
+    
+    self.resx = 720
+    self.resy = 405
+    self.userinfo = x
+    print(self.userinfo)
+    self.window_title = 'CronOS GUI v1.0.0'
+    self.window_name = self.window_title
     self.icon = pygame.image.load('Drive/System/data/Logo1.png') 
     self.running = True
+    self.background = (127, 127, 127)
+    self.BLACK = (0,0,0)
     pygame.init()
     pygame.font.init()
-    self.screan = pygame.display.set_mode((610,305))
+    self.Arial = pygame.font.SysFont('Arial',35)
+    self.smllArial = pygame.font.SysFont('Arial',20)
+    self.screen = pygame.display.set_mode((self.resx, self.resy))
     pygame.display.set_caption(self.window_name)
     pygame.display.set_icon(self.icon)
+    
 
+  def button(self, pos, size_x, size_y, color, text):
+    rect = (pos, (pos + size_x), (pos - size_y), (pos ))
+    pygame.draw.rect(self.screen, color, rect)
     
   def exit(self):
     self.userinfo.close()
@@ -22,7 +37,12 @@ class window:
   
 
   def gui(self):
+    self.screen.fill(self.background)
+    self.wiptxt = self.Arial.render('Work in Progress', True, self.BLACK)
+    self.user = self.smllArial.render('User: ' + str(self.userinfo), True, self.BLACK)
     while self.running:
+      self.screen.blit(self.wiptxt, self.wiptxt.get_rect(center = self.screen.get_rect().center))
+      self.screen.blit(self.user, (10,10))
       for event in pygame.event.get():
           if event.type == pygame.QUIT:
               exit()
@@ -32,13 +52,15 @@ class window:
             if event.key == pygame.K_ESCAPE:
               exit()
               
+      
+      pygame.display.update()
               
   
     
             
             
     
-
+print(color.rgb.RED())
 window = window()
 window.gui()
 

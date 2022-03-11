@@ -14,8 +14,8 @@ class window:
     self.color = (0,0,0)
     self.FPS = 30
     self.clock=pygame.time.Clock()
-    self.resx = 720
-    self.resy = 405
+    self.resx = 1280
+    self.resy = 720
     self.userinfo = x
     print(self.userinfo)
     self.window_title = 'CronOS GUI v1.0.0'

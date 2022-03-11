@@ -34,7 +34,7 @@ class window:
     pygame.display.set_icon(self.icon)
     
 
-  def button(self, x, y, szey, szex, Color, text, hover_color, close):
+  def button(self, x, y, szey, szex, Color, text, hover_color, funk):
     self.color = Color
     mouse_pos = pygame.mouse.get_pos()
     
@@ -47,8 +47,17 @@ class window:
         
         if pygame.mouse.get_pressed() == (True, False, False):
             self.color = (255,255,255)
-            if close == True:
+            if funk == 'exit':
               exit()
+            if funk == 'speed+':
+              if self.speed <= 10:
+                self.speed +=0.1
+            if funk == 'speed-':
+              if self.speed >= 0.1:
+                self.speed -=0.1
+            if funk == 'clear':
+              self.screen.fill(self.background)
+              
             
       
     
@@ -68,12 +77,15 @@ class window:
   
 
   def gui(self):
+    self.speed = 0.5
+    self.hitwall = False
+    bounce = []
+    bounce.append(0)
+    bounce.append(self.resy/2)
     self.wiptxt = self.Arial.render('Work in Progress', True, self.BLACK)
     self.user = self.smllArial.render('User: ' + str(self.userinfo), True, self.BLACK)
     
     while self.running:
-      self.screen.fill(self.background)
-      self.screen.blit(self.wiptxt, self.wiptxt.get_rect(center = self.screen.get_rect().center))
       self.screen.blit(self.user, (10,10))
       for event in pygame.event.get():
           if event.type == pygame.QUIT:
@@ -83,11 +95,28 @@ class window:
           if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE:
               exit()
-            
-      self.button(10,50,45,90, (255,100,0), 'This', (255,75,0), False)     
-      self.button(10,100,45,90, (255,45,0), 'Is', (100,20,0), False) 
-      self.button(10,150,45,90, (0,100,255), 'Test', (0,75,255), False) 
-      self.button((self.resx-95),5,45,90, (255,0,0), 'Exit', (200,0,0), True)      
+              
+              
+      if bounce[0] >= self.resx-45:
+        self.hitwall = True
+        self.screen.fill(self.background)
+      elif bounce[0] <= 0:
+        self.hitwall = False
+        self.screen.fill(self.background)
+        
+      if self.hitwall: 
+        bounce[0]-= self.speed
+      else:
+        bounce[0]+=self.speed
+      
+      
+      self.button(10,50,45,90, (255,0,0), '   +', (200,0,0), 'speed+')     
+      self.button(10,100,45,90, (0,255,0), '   - ', (0,200,0), 'speed-') 
+      self.button(10,150,45,90, (0,0,255), 'Test', (0,0,200), 'clear') 
+      self.button((self.resx-95),5,45,90, (200,0,0), 'Exit', (255,0,0), 'exit')    
+      self.button(bounce[0],bounce[1],45,45, (255,0,255), ':)', (200,0,200), False)   
+      
+      self.screen.blit(self.wiptxt, self.wiptxt.get_rect(center = self.screen.get_rect().center))
       
       pygame.display.update()
               

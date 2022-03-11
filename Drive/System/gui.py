@@ -1,5 +1,5 @@
 import pygame, sys, time
-import color
+from Drive.System import color
 
 with open('Drive/System/data/userinfo.info', 'r') as y:
   global x
@@ -26,14 +26,14 @@ class window:
     pygame.display.set_icon(self.icon)
     
 
-  def button(self, pos, size_x, size_y, color, text):
-    rect = (pos, (pos + size_x), (pos - size_y), (pos ))
+  def button(self, posx, posy, size_x, size_y, color, text):
+    rect = (pos, (posx + size_x), (posy - size_y), (pos ))
     pygame.draw.rect(self.screen, color, rect)
     
   def exit(self):
     self.userinfo.close()
-    pygame.quit()
-    return
+    pygame.close()
+    exec(open('OS.py').read())
   
 
   def gui(self):
@@ -60,7 +60,7 @@ class window:
             
             
     
-print(color.rgb.RED())
+#print(color.rgb.RED())
 window = window()
 window.gui()
 

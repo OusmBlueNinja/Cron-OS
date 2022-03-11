@@ -1,5 +1,6 @@
+from re import X
 import pygame, sys, time
-from Drive.System import color
+#from Drive.System import color
 
 with open('Drive/System/data/userinfo.info', 'r') as y:
   global x
@@ -26,9 +27,25 @@ class window:
     pygame.display.set_icon(self.icon)
     
 
-  def button(self, posx, posy, size_x, size_y, color, text):
-    rect = (pos, (posx + size_x), (posy - size_y), (pos ))
+  def button(self, x, y, szey, szex, color, text):
+    mouse_pos = pygame.mouse.get_pos()
+    #print(mouse_pos)
+    mousex = mouse_pos[0]
+    mousey = mouse_pos[1]
+    if mousex >= x and mousex <= (x + szex):
+      if mousey >= y and mousey <= (y + szey):
+    
+        print('True')
+        color = (255,0,0)
+      else:
+        print('False')
+    else:
+      print('False')
+    
+    
+    rect = pygame.draw.rect(self.screen, color, (x, y, szex, szey)) 
     pygame.draw.rect(self.screen, color, rect)
+    
     
   def exit(self):
     self.userinfo.close()
@@ -37,10 +54,11 @@ class window:
   
 
   def gui(self):
-    self.screen.fill(self.background)
     self.wiptxt = self.Arial.render('Work in Progress', True, self.BLACK)
     self.user = self.smllArial.render('User: ' + str(self.userinfo), True, self.BLACK)
+    
     while self.running:
+      self.screen.fill(self.background)
       self.screen.blit(self.wiptxt, self.wiptxt.get_rect(center = self.screen.get_rect().center))
       self.screen.blit(self.user, (10,10))
       for event in pygame.event.get():
@@ -51,7 +69,7 @@ class window:
           if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE:
               exit()
-              
+      self.button(10,50,45,90, self.BLACK, 'Hello')        
       
       pygame.display.update()
               

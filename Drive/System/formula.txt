@@ -17,3 +17,9 @@ while True:
   else:
     print('False')
   
+
+if (mousex >= x) and (mousex <= szex):
+      if (mousey <= y) and (mousey >= szey):
+
+if p_x >= e_x and p_y >= e_y:
+      if p_x <= 270 and p_y <= 100:

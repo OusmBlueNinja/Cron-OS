@@ -8,7 +8,7 @@ class style():
     CYAN = '\033[36m'
     WHITE = '\033[37m'
     UNDERLINE = '\033[4m'
-    RESET = '\033[0m' 
+    RESET = '\033[37m' 
     BRIGHTRED = '\u001b[31;1m'
     BRIGHTGREEN = '\u001b[32;1m'
     BOLD = '\u001b[1m'

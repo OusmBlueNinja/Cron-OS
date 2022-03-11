@@ -3,7 +3,7 @@ from Drive.System import color
 
 with open('Drive/System/data/userinfo.info', 'r') as y:
   global x
-  x = y.readlines(0)
+  x = y.readlines()
 class window:
   def __init__(self):
     

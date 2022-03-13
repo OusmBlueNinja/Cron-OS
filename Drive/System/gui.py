@@ -1,4 +1,3 @@
-from re import X
 import pygame, sys, time
 #from Drive.System import color
 
@@ -8,6 +7,11 @@ clock=pygame.time.Clock()
 with open('Drive/System/data/userinfo.info', 'r') as y:
   global x
   x = y.readlines()
+
+
+
+
+
 class window:
   def __init__(self):
     self.in_ = False
@@ -112,9 +116,9 @@ class window:
       
       self.button(10,50,45,90, (255,0,0), '   +', (200,0,0), 'speed+')     
       self.button(10,100,45,90, (0,255,0), '   - ', (0,200,0), 'speed-') 
-      self.button(10,150,45,90, (0,0,255), 'Test', (0,0,200), 'clear') 
-      self.button((self.resx-95),5,45,90, (200,0,0), 'Exit', (255,0,0), 'exit')    
-      self.button(bounce[0],bounce[1],45,45, (255,0,255), ':)', (200,0,200), False)   
+      self.button(10,150,45,90, (0,0,255), 'Test', (0,0,200), 'clear')   
+      self.button(bounce[0],bounce[1],45,45, (255,0,255), ':)', (255,0,255), False)
+      self.button((self.resx-95),5,45,90, (200,0,0), 'Exit', (255,0,0), 'exit')  
       
       self.screen.blit(self.wiptxt, self.wiptxt.get_rect(center = self.screen.get_rect().center))
       

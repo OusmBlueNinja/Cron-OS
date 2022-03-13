@@ -62,7 +62,6 @@ class window:
             if funk == 'clear':
               self.screen.fill(self.background)
               
-            
       
     
     rect = pygame.draw.rect(self.screen, self.color, (x, y, szex, szey)) 
@@ -70,7 +69,10 @@ class window:
     words = self.MsmllArial.render(str(text), True, self.BLACK)
     self.screen.blit(words, (x+17, y+7.2))
     
-    
+  def textInput():
+    return 'WIP'
+  
+  
   def exit(self):
     try:
       self.userinfo.close()

@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> e7fdf0dda7f32c082aec118c58806ea8d0ca9c35
 import pygame, sys, time
 #from Drive.System import color
 
